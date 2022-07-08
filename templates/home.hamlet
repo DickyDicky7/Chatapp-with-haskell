@@ -1,0 +1,13 @@
+$doctype 5
+<html>
+  <head>
+
+    <script src="https://unpkg.com/htmx.org@1.7.0" crossorigin="anonymous">
+    <script src="https://unpkg.com/hyperscript.org@0.9.5">
+    
+  <body>
+
+    <h1>Homepage
+    
+    <div hx-boost="true">
+      <a href="/templates/chat.html">Go to chat!

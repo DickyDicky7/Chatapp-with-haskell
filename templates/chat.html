@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+
+  <body>
+    <script>
+      function connect() {
+        const ws = new WebSocket('ws://localhost:8080');
+        ws.onopen = function () {
+          const send = document.querySelector('#send');
+          const input = document.querySelector('#input');
+          send.addEventListener('click', () => {
+            ws.send(
+              JSON.stringify({
+                message: input.value,
+              })
+            );
+            setTimeout(function () {
+              input.value = '';
+            }, 1000);
+          });
+        };
+
+        ws.onmessage = function (event) {
+          console.log('Message:', event.data);
+        };
+
+        ws.onclose = function () {
+          setTimeout(function () {
+            connect();
+          }, 1000);
+        };
+
+        ws.onerror = function () {
+          ws.close();
+        };
+      }
+
+      connect();
+    </script>
+    <input type="text" id="input" />
+    <button id="send">Send</button>
+  </body>
+</html>

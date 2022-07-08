@@ -1,0 +1,73 @@
+name: twain1
+version: 0.1.0.0
+github: 'githubuser/twain1'
+license: BSD3
+author: 'Author name here'
+maintainer: 'example@example.com'
+copyright: '2022 Author name here'
+
+extra-source-files:
+  - README.md
+  - ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description: Please see the README on GitHub at <https://github.com/githubuser/twain1#readme>
+
+dependencies:
+  - base >= 4.7 && < 5
+  - twain
+  - universum
+  - warp
+  - wai
+  - wai-extra
+  - shakespeare
+  - blaze-html
+  - wai-websockets
+  - websockets
+  - http-types
+  - time
+  - aeson
+  - aeson-casing
+  - casing
+  - uuid
+  - io-storage
+  - containers
+  - lens
+  - bytestring
+  - wai-middleware-static
+  - wai-cors
+
+library:
+  source-dirs: src
+
+executables:
+  twain1-exe:
+    main: Main.hs
+    source-dirs: app
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+      - -O2
+      # - -fllvm
+    dependencies:
+      - twain1
+
+tests:
+  twain1-test:
+    main: Spec.hs
+    source-dirs: test
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+      - -O2
+      # - -fllvm
+    dependencies:
+      - twain1
