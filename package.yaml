@@ -30,18 +30,26 @@ dependencies:
   - blaze-html
   - wai-websockets
   - websockets
-  - http-types
+  # - http-types
   - time
   - aeson
-  - aeson-casing
-  - casing
+  # - aeson-casing
+  # - casing
   - uuid
-  - io-storage
+  # - io-storage
   - containers
-  - lens
+  # - lens
   - bytestring
   - wai-middleware-static
   - wai-cors
+  - pretty-simple
+  - cookie
+  # - jwt
+  # - jose-jwt
+  # - jose
+  - libjwt-typed
+  - either
+  - load-env
 
 library:
   source-dirs: src
